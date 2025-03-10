@@ -15,7 +15,14 @@ curl -s "https://rebelog.ie/wp-admin/admin-ajax.php?action=fixtures&club_id=8943
             venue: @(data-venue),
             compname: @(data-compname)            
     }]
-}"
-
-            
-
+}" | jq '.fixtures |= map(
+        .dt = (.date + " " + .time | strptime("%d %b %Y %H:%M") | strftime("%Y-%m-%d %H:%M")) |
+        .unix = (.date + " " + .time | strptime("%d %b %Y %H:%M") | mktime) |
+        if .hometeam | test("Kiltha"; "i") then
+        .opposition = .awayteam
+        elif .awayteam | test("Kiltha"; "i") then
+        .opposition = .hometeam
+        else
+        .
+        end        
+)'

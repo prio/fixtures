@@ -15,4 +15,14 @@ curl -s "https://www.eastcorkgaa.com/wp-admin/admin-ajax.php?action=fixtures&clu
             venue: @(data-venue),
             compname: @(data-compname)
     }]
-}"
+}" | jq '.fixtures |= map(
+        .dt = (.date + " " + .time | strptime("%d %b %Y %H:%M") | strftime("%Y-%m-%d %H:%M")) |
+        .unix = (.date + " " + .time | strptime("%d %b %Y %H:%M") | mktime) |
+        if .hometeam | test("Dungourney"; "i") then
+        .opposition = .awayteam
+        elif .awayteam | test("Dungourney"; "i") then
+        .opposition = .hometeam
+        else
+        .
+        end        
+)'
