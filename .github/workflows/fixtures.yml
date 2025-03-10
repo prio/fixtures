@@ -26,12 +26,7 @@ jobs:
 
       - name: Generate Fixtures
         run: |
-          /bin/bash dg.sh > docs/dg.json
-          /bin/bash dg_gaa.sh > docs/dg_gaa.json
-          /bin/bash kog.sh > docs/kog.json
-          /bin/bash dg_to_html.sh
-          /bin/bash kiltha_to_html.sh
-          echo "Hi" > docs/index.html
+          /bin/bash daily.sh
 
       - name: Copy HTML
         run: |
