@@ -1,4 +1,6 @@
 cp html/app.js docs/
+cp html/kilthaog_512.png docs/
+cp html/manifest.json docs/
 
 cat html/kilta_header.html > docs/kiltha.html
 
