@@ -1,39 +1,19 @@
-echo "<html>
-    <head>
-    <meta  name=\"js-widget-title\" content=\"Kiltha Og Fixtures\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <title>Fixtures Table</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
-    </head>
-    <body>
-        <table>
-            <tr>
-                <th>Date</th>
-                <th>Versus</th>
-                <th>Competition Name</th>
-                <th>Venue</th>
-            </tr>" > docs/kiltha.html
+cat html/kilta_header.html > docs/kiltha.html
 
 cat docs/kog.json | jq -r '.fixtures[] | 
-    "<tr>
-        <td>" + .date + " " + .time + "</td>
-        <td>" + .opposition + "</td>
-        <td>" + .compname + "</td>
-        <td>" + .venue + "</td>
-    </tr>"
-' >> docs/kiltha.html
+    "<li>
+        <div class=\"item-content\">
+            <div class=\"item-media\">
+                <img width=\"70\" style=\"border-radius: 8px\" src=\"" + .crest + "\" />
+            </div>
+            <div class=\"item-inner\">
+                <div class=\"item-title-row\">
+                    <div class=\"item-title\">" + .date + ", " + .time + "</div>
+                </div>
+                <div class=\"item-subtitle\">" + .opposition + " in " + .venue + "</div>
+                <div class=\"item-text\">" + .compname + "</div>
+            </div>                                    
+        </div>                                          
+    </li>"' >> docs/kiltha.html
 
-echo "</table></body></html>" >> docs/kiltha.html
+cat html/kilta_footer.html >> docs/kiltha.html

@@ -10,6 +10,8 @@ curl -s "https://rebelog.ie/wp-admin/admin-ajax.php?action=fixtures&club_id=8943
             time: @(data-time),
             hometeam: @(data-hometeam),
             awayteam: @(data-awayteam),
+            homecrest: li.flogo1 > a > img | @(src),
+            awaycrest: li.flogo2 > a > img | @(src),
             referee: @(data-referee),
             comment: @(data-comment),
             venue: @(data-venue),
@@ -19,9 +21,11 @@ curl -s "https://rebelog.ie/wp-admin/admin-ajax.php?action=fixtures&club_id=8943
         .dt = try (.date + " " + .time | strptime("%d %b %Y %H:%M") | strftime("%Y-%m-%d %H:%M")) catch ("") |
         .unix = try (.date + " " + .time | strptime("%d %b %Y %H:%M") | mktime) catch ("") |
         if .hometeam | test("Kiltha"; "i") then
-        .opposition = .awayteam
+        .opposition = .awayteam |
+        .crest = .awaycrest
         elif .awayteam | test("Kiltha"; "i") then
-        .opposition = .hometeam
+        .opposition = .hometeam |
+        .crest = .homecrest
         else
         .
         end        
