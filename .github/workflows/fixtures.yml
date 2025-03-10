@@ -28,10 +28,6 @@ jobs:
         run: |
           /bin/bash daily.sh
 
-      - name: Copy HTML
-        run: |
-          cp html/* docs/
-
       - name: Setup Git
         run: |
           git config --global user.name "github-actions[bot]"
