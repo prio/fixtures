@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
   schedule:
-  - cron: "0 13-23 * * 1-5"
+  - cron: "0 23 * * *"
 
 jobs:
   build:
@@ -14,11 +14,23 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Set up cargo & curl
-      run: sudo apt install -y curl cargo
+      run: sudo apt install -y curl cargo jq
       
     - name: Set up hq
       run: cargo install html-query
 
-    - name: Generate Dungourney ECB Fixtures
-      run: /bin/bash dg.sh
-      
+    - name: Generate Fixtures
+      run: |
+        /bin/bash dg.sh > docs/gg.json
+        /bin/bash dg_gaa.sh > docs/dg_gaa.json
+        /bin/bash kog.sh > docs/kog.json
+
+    -name: Deploy Page
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "Github Action"
+        git add docs/gg.json -f
+        git add docs/dg_gaa.json -f
+        git add docs/kog.json -f
+        git commit -m "Update docs" -a
+        git push "https://prio:${{ secrets.GITHUB_PERSONAL_TOKEN }}@github.com/prio/fixtures.git" HEAD:main --follow-tags"
