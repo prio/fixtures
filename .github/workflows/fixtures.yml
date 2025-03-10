@@ -26,7 +26,7 @@ jobs:
 
       - name: Generate Fixtures
         run: |
-          /bin/bash dg.sh > docs/gg.json
+          /bin/bash dg.sh > docs/dg.json
           /bin/bash dg_gaa.sh > docs/dg_gaa.json
           /bin/bash kog.sh > docs/kog.json
           echo "Hi" > docs/index.html
