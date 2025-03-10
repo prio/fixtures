@@ -31,6 +31,10 @@ jobs:
           /bin/bash kog.sh > docs/kog.json
           echo "Hi" > docs/index.html
 
+      - name: Copy HTML
+        run: |
+          cp html/* docs/
+
       - name: Setup Git
         run: |
           git config --global user.name "github-actions[bot]"
