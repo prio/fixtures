@@ -1,6 +1,7 @@
 {
     "name": "Kiltha Fixtures",
-    "start_url": "/kiltha.html",
+    "start_url": "/fixtures/kiltha.html",
+    "display": "fullscreen",
     "icons": [
       {
         "src": "kilthaog_512.png",
