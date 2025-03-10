@@ -26,13 +26,18 @@ jobs:
         /bin/bash kog.sh > docs/kog.json
 
     - name: Deploy Page
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "Github Action"
-        git add docs/gg.json -f
-        git add docs/dg_gaa.json -f
-        git add docs/kog.json -f
-        git commit -m "Update docs" -a
-        git fetch origin
-        git rebase --strategy-option=theirs origin/main
-        git push
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - name: Commit & Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Github Action"
+          git add docs/gg.json -f
+          git add docs/dg_gaa.json -f
+          git add docs/kog.json -f
+          git commit -m "Update docs" -a
+          git fetch origin
+          git rebase --strategy-option=theirs origin/main
+          git push
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
