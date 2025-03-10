@@ -26,7 +26,7 @@ jobs:
         /bin/bash kog.sh > docs/kog.json
 
     - name: Deploy Page
-    steps:
+      steps:
       - uses: actions/checkout@v4.1.1
       - name: Commit & Push
         run: |
