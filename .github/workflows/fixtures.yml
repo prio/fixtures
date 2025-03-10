@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     
     - name: Set up cargo & curl
       run: sudo apt install -y curl cargo jq
@@ -33,4 +33,6 @@ jobs:
         git add docs/dg_gaa.json -f
         git add docs/kog.json -f
         git commit -m "Update docs" -a
-        git push "https://prio:${{ secrets.GITHUB_PERSONAL_TOKEN }}@github.com/prio/fixtures.git" HEAD:main --follow-tags"
+        git fetch origin
+        git rebase --strategy-option=theirs origin/main
+        git push
