@@ -1,8 +1,4 @@
-cp html/app.js docs/
-cp html/kilthaog_512.png docs/
-cp html/manifest.json docs/
-
-cat > docs/kiltha.html <<- EOF
+cat <<- EOF
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,7 +60,7 @@ cat > docs/kiltha.html <<- EOF
                         <!-- Inserted -->
 EOF
 
-cat docs/kog.json | jq -r '.fixtures[] | 
+jq -r '.fixtures[] | 
     "<li class=\"custom-media-item\">
         <div class=\"item-content\">
             <div class=\"item-media\">
@@ -79,9 +75,9 @@ cat docs/kog.json | jq -r '.fixtures[] |
                 <div class=\"item-text\">" + .compname + "</div>
             </div>                                    
         </div>                                          
-    </li>"' >> docs/kiltha.html
+    </li>"'
 
-cat >> docs/kiltha.html <<- EOF
+cat <<- EOF
                 <!-- End Of Inserted -->
             </div>
         </div>

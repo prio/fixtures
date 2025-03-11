@@ -1,12 +1,5 @@
 #!/bin/sh
 
-if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 <TeamName>"
-    exit 1
-fi
-
-TEAM_NAME="$1"
-
 cat <<- EOF
 <?xml version="1.0" encoding="UTF-8"?>
     <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
@@ -17,7 +10,7 @@ cat <<- EOF
         <description>Latest fixtures</description>
 EOF
 
-cat docs/"$TEAM_NAME".json | jq -r '.fixtures[] | 
+jq -r '.fixtures[] | 
     "<item>
         <title><![CDATA[" + .hometeam + " v " + .awayteam + "]]></title>
         <guid isPermaLink=\"false\"><![CDATA[https://gaacork.ie/wp-admin/admin-ajax.php?action=fixtures&club_id=2822]]></guid>
