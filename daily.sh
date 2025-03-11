@@ -7,8 +7,12 @@ bash src/get_fixtures.sh "https://rebelog.ie/wp-admin/admin-ajax.php?action=fixt
 cat docs/Kiltha.json | bash src/upcoming_filter.sh | bash src/fx_to_rss.sh > docs/Kiltha.rss
 cat docs/Dungourney.json |bash src/fx_to_rss.sh > docs/Dungourney.rss
 
-# Generate Kiltha Web Page
-cat docs/Kiltha.json | bash src/kiltha_to_html.sh > docs/kiltha.html
+# Generate Kiltha Web page
 cp html/* docs/
+cat docs/Kiltha.json | bash src/kiltha_to_html.sh > docs/kiltha.html
+
+# Generate Kiltha Widget
+cat docs/Kiltha.json | bash src/fx_to_widget.sh > docs/kiltha_widget.html
+
 
 echo "Hi" > docs/index.html

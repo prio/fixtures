@@ -18,11 +18,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
     
-      - name: Set up cargo & curl
-        run: sudo apt install -y curl cargo jq
-      
-      - name: Set up hq
-        run: cargo install html-query
+      - name: Set up dependencies
+        run: |
+          sudo apt install -y curl cargo jq
+          cargo install html-query
+          sh <(curl https://tea.xyz) +gomplate.ca sh
 
       - name: Generate Fixtures
         run: |

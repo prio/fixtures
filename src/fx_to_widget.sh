@@ -1,3 +1,6 @@
+#!/bin/sh
+
+cat <<- EOF
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +17,7 @@
             flex-direction: column;
             align-items: center;
             font-family: 'Poppins', sans-serif;
-            font-size: x-small;
+            font-size: clamp(10px, 1.5vw, 32px);
         }
         .container {
             display: flex;
@@ -31,17 +34,19 @@
         }
         .center {
             display: flex;
+            align-items: flex-start;
             flex-direction: column;
-            align-items: center;
         }
         .circular-img {
-            width: 50px;
+            width: 100%;
+            max-width: 12vw;
             border-radius: 50%;
             object-fit: cover;
         }
         .rounded-img {
-            width: 50px;
             border-radius: 10px;
+            width: 100%;
+            max-width: 12vw;
         }    
         .center-item {
             display: flex;
@@ -52,12 +57,20 @@
             margin-left: 10px;
         }         
         .corner {
-            width: 35px;
+            width: 10vw;
         }   
-        .top-left { top: 10px; left: 10px; }
-        .top-right { top: 0px; right: 0px; }
-        .bottom-left { bottom: 0px; left: 0px; }
-        .bottom-right { bottom: 10px; right: 10px; }
+        .top-left { 
+            top: 10px; 
+            left: 10px; 
+        }
+        .top-right { 
+            top: 1vw; 
+            right: 1vw; 
+        }
+        .bottom-left { 
+            bottom: 1vw; 
+            left: 1vw; 
+        }        
         .top-left, .top-right, .bottom-left, .bottom-right {
             position: absolute;
         }
@@ -67,39 +80,48 @@
         .date {            
             margin: 5px 0;
             font-weight: bold;
-        }        
-        .opponent {
-        }        
+        }
     </style>
 </head>
 <body>
     <div class="top-right"><img src="kilthaog_512.png" class="corner"></div>
     <div class="container">
+EOF
+
+gomplate -d fixtures=stdin:///dev/stdin -i '
+{{ $data := (datasource "fixtures" | data.JSON) }}
+{{ $first := index $data.fixtures 0 }}
+{{ $second := index $data.fixtures 1 }}
+{{ $third := index $data.fixtures 2 }}
+
         <div class="left">            
-            <img src="https://sportlomo-userupload.s3.amazonaws.com/clubLogos/855/aghada GAA.png" class="circular-img">
-            <div class="label">U18</div>
-            <div class="date">16th March, 14:30</div>
-            <div class="opponent">St Catherines</div>
-            <div class="venue">in Dungourney</div>
+            <img src="{{ $first.crest }}" class="circular-img">
+            <div class="label">{{ $first.age }}</div>
+            <div class="date">{{ $first.date }}, {{ $first.time }}</div>
+            <div class="opponent">{{ $first.opposition }}</div>
+            <div class="venue">in {{ $first.venue }}</div>
         </div>
         <div class="center">
             <div class="center-item">
-                <img src="https://sportlomo-userupload.s3.amazonaws.com/clubLogos/2045/Sarsfields - Senior Hurling.png" class="rounded-img">
+                <img src="{{ $second.crest }}" class="rounded-img">
                 <div class="text-content">
-                    <div class="date">16th March, 14:30</div>
-                    <div class="opponent">St Catherines in Dungourney</div>
-                    <div class="label">U18</div>
+                    <div class="date">{{ $second.date }}, {{ $second.time }}</div>
+                    <div class="opponent">{{ $second.opposition }} in {{ $second.venue }}</div>
+                    <div class="label">{{ $second.age }}</div>
                 </div>
             </div>
             <div class="center-item">
-                <img src="https://sportlomo-userupload.s3.amazonaws.com/clubLogos/2046/watergrassshill.gif" class="rounded-img">
+                <img src="{{ $third.crest }}" class="rounded-img">
                 <div class="text-content">
-                    <div class="date">16th March, 14:30</div>
-                    <div class="opponent">St Catherines in Dungourney</div>
-                    <div class="label">U18</div>
+                    <div class="date">{{ $third.date }}, {{ $third.time }}</div>
+                    <div class="opponent">{{ $third.opposition }} in {{ $third.venue }}</div>
+                    <div class="label">{{ $third.age }}</div>
                 </div>
             </div>
-        </div>
+        </div>'
+
+cat <<- EOF
     </div>
 </body>
 </html>
+EOF
