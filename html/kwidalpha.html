@@ -1,7 +1,106 @@
-<html>
-<head></head>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags-->
+    <meta  name="js-widget-title" content="Kiltha Og Fixtures">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiltha Og Fixtures</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+        .left, .right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .circular-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .rounded-img {
+            width: 70px;
+            border-radius: 10px;
+        }    
+        .center-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .text-content {
+            margin-left: 10px;
+        }         
+        .corner {
+            width: 70px;
+        }   
+        .top-left { top: 10px; left: 10px; }
+        .top-right { top: 10px; right: 10px; }
+        .bottom-left { bottom: 10px; left: 10px; }
+        .bottom-right { bottom: 10px; right: 10px; }
+        .top-left, .top-right, .bottom-left, .bottom-right {
+            position: absolute;
+        }
+        .label {            
+            color: green;
+        }
+        .date {            
+            margin: 5px 0;
+            font-weight: bold;
+        }        
+        .opponent {
+        }        
+    </style>
+</head>
 <body>
-    <img src="KOGMockWidgetAlpha.png" />
+    <div class="top-right"><img src="TopCorner.png" class="corner"></div>
+    <div class="container">
+        <div class="left">            
+            <img src="https://sportlomo-userupload.s3.amazonaws.com/clubLogos/855/aghada GAA.png" class="circular-img">
+            <div class="label">U18</div>
+            <div class="date">16th March, 14:30</div>
+            <div class="opponent">St Catherines</div>
+            <div class="venue">in Dungourney</div>
+        </div>
+        <div class="center">
+            <div class="center-item">
+                <img src="https://sportlomo-userupload.s3.amazonaws.com/clubLogos/2045/Sarsfields - Senior Hurling.png" class="rounded-img">
+                <div class="text-content">
+                    <div class="date">16th March, 14:30</div>
+                    <div class="opponent">St Catherines in Dungourney</div>
+                    <div class="label">U18</div>
+                </div>
+            </div>
+            <div class="center-item">
+                <img src="https://sportlomo-userupload.s3.amazonaws.com/clubLogos/2046/watergrassshill.gif" class="rounded-img">
+                <div class="text-content">
+                    <div class="date">16th March, 14:30</div>
+                    <div class="opponent">St Catherines in Dungourney</div>
+                    <div class="label">U18</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-left"><img src="BottomCorner.png"  class="corner"></div>
 </body>
 </html>
