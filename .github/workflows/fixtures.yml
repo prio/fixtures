@@ -22,7 +22,7 @@ jobs:
         run: |
           sudo apt install -y curl cargo jq
           cargo install html-query
-          sh <(curl https://tea.xyz) +gomplate.ca sh
+          /bin/bash <(curl https://tea.xyz) +gomplate.ca sh
 
       - name: Generate Fixtures
         run: |
