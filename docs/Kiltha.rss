@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <atom:link href="https://www.apps.searon.org/feeds/fixtures.xml" rel="self" type="application/rss+xml"/>
+        <title>Fixtures</title>
+        <link>https://gaacork.ie/</link>
+        <description>Latest fixtures</description>
+<item>
+        <title><![CDATA[Aghada 2 v Kiltha Og 2]]></title>
+        <guid isPermaLink="false"><![CDATA[https://gaacork.ie/wp-admin/admin-ajax.php?action=fixtures&club_id=2822]]></guid>
+        <link><![CDATA[https://gaacork.ie/wp-admin/admin-ajax.php?action=fixtures&club_id=2822]]></link>
+        <pubDate>Sat, 22 Mar 2025 14:00:00 +0000</pubDate>
+        <description><![CDATA[
+            <div>
+                <img src="https://sportlomo-userupload.s3.amazonaws.com/clubLogos/855/aghada GAA.png"/>
+            </div>
+            Aghada, Sat 22nd 14:00<br />
+            Rebel Og East Fe14 Division 4 Football League
+        ]]></description>
+    </item>
+<item>
+        <title><![CDATA[Kiltha Og v St Michaels]]></title>
+        <guid isPermaLink="false"><![CDATA[https://gaacork.ie/wp-admin/admin-ajax.php?action=fixtures&club_id=2822]]></guid>
+        <link><![CDATA[https://gaacork.ie/wp-admin/admin-ajax.php?action=fixtures&club_id=2822]]></link>
+        <pubDate>Sat, 22 Mar 2025 17:30:00 +0000</pubDate>
+        <description><![CDATA[
+            <div>
+                <img src="https://sportlomo-userupload.s3.amazonaws.com/clubLogos/1995/St Michaels.png"/>
+            </div>
+            Dungourney, Sat 22nd 17:30<br />
+            Rebel Og East Fe18 Division 1 Football League
+        ]]></description>
+    </item>
+<item>
+        <title><![CDATA[Kiltha Og v Youghal]]></title>
+        <guid isPermaLink="false"><![CDATA[https://gaacork.ie/wp-admin/admin-ajax.php?action=fixtures&club_id=2822]]></guid>
+        <link><![CDATA[https://gaacork.ie/wp-admin/admin-ajax.php?action=fixtures&club_id=2822]]></link>
+        <pubDate>Sun, 23 Mar 2025 11:00:00 +0000</pubDate>
+        <description><![CDATA[
+            <div>
+                <img src="https://sportlomo-userupload.s3.amazonaws.com/clubLogos/1997/Youghal.jpg"/>
+            </div>
+            Castlemartyr, Sun 23rd 11:00<br />
+            Rebel Og Coiste Fe14 Premier 2 Section 1 Football League
+        ]]></description>
+    </item>
+<item>
+        <title><![CDATA[Midleton 2 v Kiltha Og 2]]></title>
+        <guid isPermaLink="false"><![CDATA[https://gaacork.ie/wp-admin/admin-ajax.php?action=fixtures&club_id=2822]]></guid>
+        <link><![CDATA[https://gaacork.ie/wp-admin/admin-ajax.php?action=fixtures&club_id=2822]]></link>
+        <pubDate>Sun, 23 Mar 2025 14:00:00 +0000</pubDate>
+        <description><![CDATA[
+            <div>
+                <img src="https://sportlomo-userupload.s3.amazonaws.com/clubLogos/2025/midleton.gif"/>
+            </div>
+            Midleton, Sun 23rd 14:00<br />
+            Rebel Og East Fe16 Division 4 Section 2 Football League
+        ]]></description>
+    </item>
+<item>
+        <title><![CDATA[Kiltha Og 2 v Ballincollig 2]]></title>
+        <guid isPermaLink="false"><![CDATA[https://gaacork.ie/wp-admin/admin-ajax.php?action=fixtures&club_id=2822]]></guid>
+        <link><![CDATA[https://gaacork.ie/wp-admin/admin-ajax.php?action=fixtures&club_id=2822]]></link>
+        <pubDate>Sun, 23 Mar 2025 14:00:00 +0000</pubDate>
+        <description><![CDATA[
+            <div>
+                <img src="https://sportlomo-userupload.s3.amazonaws.com/clubLogos/1986/ballincollig.gif"/>
+            </div>
+            Castlemartyr, Sun 23rd 14:00<br />
+            Rebel Og Coiste Fe18 Division 4 Football League
+        ]]></description>
+    </item>
+    </channel>
+    </rss>
