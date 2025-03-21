@@ -9,8 +9,7 @@ cat <<- EOF
     <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
     <meta name="mobile-web-app-capable" content="yes">
-    <!-- Color theme for statusbar (Android only) -->
-    <meta name="theme-color" content="#2196f3">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <!-- Your app title -->
     <title>Fixtures</title>
     <!-- Path to Framework7 Library Bundle CSS -->
