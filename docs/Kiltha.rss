@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <atom:link href="https://www.apps.searon.org/feeds/fixtures.xml" rel="self" type="application/rss+xml"/>
+        <title>Fixtures</title>
+        <link>https://gaacork.ie/</link>
+        <description>Latest fixtures</description>
+<item>
+        <title><![CDATA[Kiltha Og v Fermoy]]></title>
+        <guid isPermaLink="false"><![CDATA[https://gaacork.ie/wp-admin/admin-ajax.php?action=fixtures&club_id=2822]]></guid>
+        <link><![CDATA[https://gaacork.ie/wp-admin/admin-ajax.php?action=fixtures&club_id=2822]]></link>
+        <pubDate>Fri, 11 Apr 2025 18:15:00 +0000</pubDate>
+        <description><![CDATA[
+            <div>
+                <img src="https://sportlomo-userupload.s3.amazonaws.com/clubLogos/2014/fermoy.gif"/>
+            </div>
+            Dungourney, Fri 11th 18:15<br />
+            Rebel Og Coiste Fe14 Premier 2 Hurling League Section 2
+        ]]></description>
+    </item>
+    </channel>
+    </rss>

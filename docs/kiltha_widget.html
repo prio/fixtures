@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags-->
+    <meta  name="js-widget-title" content="Kiltha Og Fixtures">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiltha Og Fixtures</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(10px, 1.5vw, 32px);
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+        .left, .right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .center {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        .circular-img {
+            width: 100%;
+            max-width: 12vw;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .rounded-img {
+            border-radius: 10px;
+            width: 100%;
+            max-width: 12vw;
+        }    
+        .center-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .text-content {
+            margin-left: 10px;
+        }         
+        .corner {
+            width: 10vw;
+        }   
+        .top-left { 
+            top: 10px; 
+            left: 10px; 
+        }
+        .top-right { 
+            top: 1vw; 
+            right: 1vw; 
+        }
+        .bottom-left { 
+            bottom: 1vw; 
+            left: 1vw; 
+        }        
+        .top-left, .top-right, .bottom-left, .bottom-right {
+            position: absolute;
+        }
+        .label {            
+            color: green;
+        }
+        .date {            
+            margin: 5px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-right"><img src="kilthaog_512.png" class="corner"></div>
+    <div class="container">
+
+
+
+
+
+
+        <div class="left">            
+            <img src="https://sportlomo-userupload.s3.amazonaws.com/clubLogos/2014/fermoy.gif" class="circular-img">
+            <div class="label">U14</div>
+            <div class="date">Fri 11th, 18:15</div>
+            <div class="opponent">Fermoy</div>
+            <div class="venue">in Dungourney</div>
+        </div>
+        <div class="center">
+            <div class="center-item">
+                <img src="https://sportlomo-userupload.s3.amazonaws.com/clubLogos/1991/napiarsaighs[1].gif" class="rounded-img">
+                <div class="text-content">
+                    <div class="date">Mon 14th, 18:30</div>
+                    <div class="opponent">Na Piarsaigh in Na Piarsaigh</div>
+                    <div class="label">U16</div>
+                </div>
+            </div>
+            <div class="center-item">
+                <img src="https://sportlomo-userupload.s3.amazonaws.com/clubLogos/2007/carrigaline.gif" class="rounded-img">
+                <div class="text-content">
+                    <div class="date">Mon 14th, 20:00</div>
+                    <div class="opponent">Carrigaline 2 in Carrigaline</div>
+                    <div class="label">Minor</div>
+                </div>
+            </div>
+        </div>    </div>
+</body>
+</html>
